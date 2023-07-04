@@ -1,0 +1,14 @@
+<script>
+    import { goto } from '$app/navigation';
+    import { base } from '$app/paths';
+
+    console.log('***** inside /playlist ******');
+    //goto(`${base}/`, { replace: true });
+</script>
+
+<h1>Hello</h1>
+<!-- <span></span> -->
+
+<style>
+
+</style>
