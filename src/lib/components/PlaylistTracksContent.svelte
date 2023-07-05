@@ -149,11 +149,11 @@
                     title="Click to Play from the Album: {track.album}"
                     href={null}>
                     {#if sortValue == 'sortBpm'}
-                        <p>{Math.round(track.bpm)} bpm / {track.timeSignature} &#9702; {track.name} &#9702; {track.artist}</p>
+                        <p>{Math.round(track.bpm)} bpm &#9702; {track.name} &#9702; {track.artist}</p>
                     {:else if sortValue == 'sortArtist'}
-                        <p>{track.artist} &#9702; {track.name} &#9702; {Math.round(track.bpm)} bpm / {track.timeSignature}</p>
+                        <p>{track.artist} &#9702; {track.name} &#9702; {Math.round(track.bpm)} bpm</p>
                     {:else}
-                        <p>{track.name} &#9702; {track.artist} &#9702; {Math.round(track.bpm)} bpm / {track.timeSignature}</p>
+                        <p>{track.name} &#9702; {track.artist} &#9702; {Math.round(track.bpm)} bpm</p>
                     {/if}
                 </a>
             </li>
