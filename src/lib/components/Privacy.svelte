@@ -43,7 +43,7 @@
         <b>user-read-currently-playing</b></a>:
         To read the user's currently playing content.</p>
     <br>
-    <p>Users may contact the Developer of this web site at this email address:
+    <p>Users may contact the Developer of this web site by email at:
         <span id="email">sea.av80r@gmail.com</span>.</p>
     </section>
     
