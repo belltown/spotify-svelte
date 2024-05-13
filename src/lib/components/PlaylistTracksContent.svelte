@@ -156,7 +156,7 @@
                         <p>{track.name} &#9702; {track.artist} &#9702; {Math.round(track.bpm)} bpm</p>
                     {/if}
                 </a>
-                <a href={track.previewUrl}>
+                <a style:color='yellow' href={track.previewUrl}>
                     Preview
                 </a>
             </li>
