@@ -142,24 +142,29 @@
 
     <ul>
         {#each tracks as track}
-            <li id={track.id}>               
-                <a on:click={async () => await playTrack(track.id)}
-                    style:color={track.id === currentTrackId ? 'red' : ''}
-                    class:unplayable={track.isLocal || !track.isPlayable ? 'none' : ''}
-                    title="Click to Play from the Album: {track.album}"
-                    href={null}>
-                    {#if sortValue == 'sortBpm'}
-                        <p>{Math.round(track.bpm)} bpm &#9702; {track.name} &#9702; {track.artist}
-                            &#9702; <a style:color={track.previewUrl !== 'null' ? 'yellow' : 'red'}
-                            href={track.previewUrl !== 'null'? track.previewUrl : void(0)}>
-                             Preview
-                         </a></p>
-                    {:else if sortValue == 'sortArtist'}
-                        <p>{track.artist} &#9702; {track.name} &#9702; {Math.round(track.bpm)} bpm</p>
-                    {:else}
-                        <p>{track.name} &#9702; {track.artist} &#9702; {Math.round(track.bpm)} bpm</p>
-                    {/if}
-                </a>
+            <li id={track.id}>
+                {#if sortValue == 'previewBpm'}
+                    <a href={track.previewUrl !== 'null' ? track.previewUrl : void(0)}
+                        style:color={track.previewUrl !== 'null' ? 'green' : 'red'}
+                        class:unplayable={track.isLocal || !track.isPlayable ? 'none' : ''}
+                        title="Click to Play track preview">
+                        <p>{Math.round(track.bpm)} bpm &#9702; {track.name} &#9702; {track.artist}</p>
+                    </a>
+                {:else}
+                    <a on:click={async () => await playTrack(track.id)}
+                        style:color={track.id === currentTrackId ? 'red' : ''}
+                        class:unplayable={track.isLocal || !track.isPlayable ? 'none' : ''}
+                        title="Click to Play from the Album: {track.album}"
+                        href={null}>
+                        {#if sortValue == 'sortBpm'}
+                            <p>{Math.round(track.bpm)} bpm &#9702; {track.name} &#9702; {track.artist}</p>
+                        {:else if sortValue == 'sortArtist'}
+                            <p>{track.artist} &#9702; {track.name} &#9702; {Math.round(track.bpm)} bpm</p>
+                        {:else}
+                            <p>{track.name} &#9702; {track.artist} &#9702; {Math.round(track.bpm)} bpm</p>
+                        {/if}
+                    </a>
+                {/if}
             </li>
         {/each}
     </ul>
