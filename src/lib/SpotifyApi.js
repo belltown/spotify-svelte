@@ -419,7 +419,7 @@ export default class SpotifyApi {
             market: 'from_token',
             limit: 100,
             offset: 0,
-            fields: 'next,total,items(track(id,name,is_playable,is_local,artists(name),album(name)))'
+            fields: 'next,total,items(track(id,name,is_playable,is_local,preview_url,artists(name),album(name)))'
         });
         url = url || `/playlists/${playlistId}/tracks?${searchParams.toString()}`;
         const json = await this.apiGet(url);

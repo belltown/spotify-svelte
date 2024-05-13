@@ -33,7 +33,7 @@ to the full extent allowed by law.
 </li>
 <li>
 The Developer is responsible for this product, and disclaims any liability on the part of third parties
-(e.g., Spotify).
+(e.g. Spotify).
 </li>
 <li>
 Spotify is a third party beneficiary of this End User License Agreement
