@@ -149,16 +149,16 @@
                     title="Click to Play from the Album: {track.album}"
                     href={null}>
                     {#if sortValue == 'sortBpm'}
-                        <p>{Math.round(track.bpm)} bpm &#9702; {track.name} &#9702; {track.artist}</p>
+                        <p>{Math.round(track.bpm)} bpm &#9702; {track.name} &#9702; {track.artist}
+                            &#9702; <a style:color={track.previewUrl !== 'null' ? 'yellow' : 'red'}
+                            href={track.previewUrl !== 'null'? track.previewUrl : void(0)}>
+                             Preview
+                         </a></p>
                     {:else if sortValue == 'sortArtist'}
                         <p>{track.artist} &#9702; {track.name} &#9702; {Math.round(track.bpm)} bpm</p>
                     {:else}
                         <p>{track.name} &#9702; {track.artist} &#9702; {Math.round(track.bpm)} bpm</p>
                     {/if}
-                </a>
-                <a style:color={track.previewUrl !== 'null' ? 'yellow' : 'red'}
-                   href={track.previewUrl !== 'null'? track.previewUrl : void(0)}>
-                    Preview
                 </a>
             </li>
         {/each}
