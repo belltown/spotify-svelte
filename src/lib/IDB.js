@@ -390,6 +390,7 @@ export default class IDB {
                     const id = item.track.id;
                     const isPlayable = item.track.is_playable || false;
                     const isLocal = item.track.is_local || false;
+                    const previewUrl = item.track.preview_url || 'null';
                     let name = 'Track Deleted';
                     let artist = 'Unknown artist';
                     let album = 'Unknown album';
@@ -404,7 +405,7 @@ export default class IDB {
                     if (item.track.album && item.track.album.name) {
                         album = item.track.album.name;
                     }
-                    const track = {name, id, isPlayable, isLocal, artist, album, bpm: 0};
+                    const track = {name, id, isPlayable, isLocal, artist, album, previewUrl, bpm: 0};
                     tracksChunk.push(track);
                 }
                 else {
