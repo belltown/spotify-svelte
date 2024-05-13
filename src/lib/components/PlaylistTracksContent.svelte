@@ -32,7 +32,7 @@
     }
 
     function sortTracks(tracks, sortValue) {
-        if (sortValue === "sortBpm") {
+        if (sortValue === "sortBpm" || sortValue === "previewBpm") {
             return [...tracks].sort((a, b) => a.bpm - b.bpm);
         }
         else if (sortValue === "sortTrack") {
@@ -123,6 +123,7 @@
             <option value="sortBpm">BPM Sort</option>
             <option value="sortTrack">Track Sort</option>
             <option value="sortArtist">Artist Sort</option>
+            <option value="previewBpm">Play Preview</option>
         </select>
         <select id="rangeMenu" on:change={onDanceValueChange} bind:value={danceValue}>
             {#each Tempo.tempoList as {key, dance} (key)}
