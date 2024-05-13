@@ -157,8 +157,7 @@
                     {/if}
                 </a>
                 <a style:color={track.previewUrl !== 'null' ? 'yellow' : 'red'}
-                   href={track.previewUrl}
-                   disabled={track.previewUrl === 'null'}>
+                   href={track.previewUrl !== 'null'? track.previewUrl : void(0)}>
                     Preview
                 </a>
             </li>
