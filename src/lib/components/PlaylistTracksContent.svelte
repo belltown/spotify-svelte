@@ -35,7 +35,7 @@
         if (sortValue === "sortBpm" || sortValue === "previewBpm") {
             return [...tracks].sort((a, b) => a.bpm - b.bpm);
         }
-        else if (sortValue === "sortTrack") {
+        else if (sortValue === "sortTrack" || sortValue === "previewTrack") {
             return [...tracks].sort((a, b) => a.name.localeCompare(b.name));
         }
         else if (sortValue === "sortArtist") {
@@ -123,7 +123,8 @@
             <option value="sortBpm">BPM Sort</option>
             <option value="sortTrack">Track Sort</option>
             <option value="sortArtist">Artist Sort</option>
-            <option value="previewBpm">Play Preview</option>
+            <option value="previewBpm">Preview (BPM)</option>
+            <option value="previewTrack">Preview (Track)</option>
         </select>
         <select id="rangeMenu" on:change={onDanceValueChange} bind:value={danceValue}>
             {#each Tempo.tempoList as {key, dance} (key)}
@@ -144,7 +145,7 @@
     <ul>
         {#each tracks as track}
             <li id={track.id}>
-                {#if sortValue == 'previewBpm'}
+                {#if sortValue == 'previewBpm' || sortValue == 'previewTrack'}
                     <a href={track.previewUrl !== 'null' ? track.previewUrl : void(0)}
                         style:color={track.previewUrl !== 'null' ? 'green' : 'red'}
                         class:unplayable={track.isLocal || !track.isPlayable ? 'none' : ''}

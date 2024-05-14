@@ -165,7 +165,7 @@ export default class DB {
                     if (item.track.album && item.track.album.name) {
                         album = item.track.album.name;
                     }
-                    const track = {name, id, isPlayable, isLocal, artist, album, previewUrl: previewUrl, bpm: 0};
+                    const track = {name, id, isPlayable, isLocal, artist, album, previewUrl, bpm: 0};
                     //if (isPlayable) {
                     tracksChunk.push(track);
                     //}
