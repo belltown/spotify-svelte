@@ -44,7 +44,7 @@
         To read the user's currently playing content.</p>
     <br>
     <p>Users may contact the Developer of this web site by email at:
-        <span id="email">sea.av80r@gmail.com</span>.</p>
+        <span id="email">info@belltown-spotify.tk</span>.</p>
     </section>
     
     <style>
