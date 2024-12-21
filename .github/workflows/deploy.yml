@@ -27,6 +27,7 @@ jobs:
         env:
           BASE_PATH: '/spotify-svelte'
           PUBLIC_CLIENT_ID: ${{ secrets.PUBLIC_CLIENT_ID }}
+          PUBLIC_REFRESH_TOKEN: ${{ secrets.PUBLIC_REFRESH_TOKEN }}
         run: |
           npm run build
           touch build/.nojekyll
