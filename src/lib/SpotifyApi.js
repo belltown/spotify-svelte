@@ -1,6 +1,6 @@
 import { ErrorLogger } from '$lib/ErrorLogger';
 import { TokenStore } from '$lib/stores/Store';
-import { PUBLIC_CLIENT_ID } from '$env/static/public';
+import { PUBLIC_CLIENT_ID, REFRESH_TOKEN } from '$env/static/public';
 
 export default class SpotifyApi {
 
@@ -44,6 +44,12 @@ export default class SpotifyApi {
     }
 
     async redirectToAuthCodeFlow(callbackUrl) {
+        console.log('REFRESH_TOKEN', REFRESH_TOKEN);
+
+        if (REFRESH_TOKEN) {
+            await this.refreshExpiredAccessToken(REFRESH_TOKEN);
+        }
+
         const state = this.generateVerifier();
         const verifier = this.generateVerifier();
         const challenge = await this.generateChallenge(verifier);

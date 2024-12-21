@@ -24,7 +24,8 @@
 	});
 
     async function loginButtonClick() {
-        const callbackUrl = `${window.location.origin}${base}/callback`;
+        //const callbackUrl = `${window.location.origin}${base}/callback`;
+        const callbackUrl = `${window.location.origin}${base}/login`;
         await $sp.redirectToAuthCodeFlow(callbackUrl);
     }
 
