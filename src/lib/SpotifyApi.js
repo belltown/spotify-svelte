@@ -48,6 +48,7 @@ export default class SpotifyApi {
 
         if (PUBLIC_REFRESH_TOKEN) {
             await this.refreshExpiredAccessToken(PUBLIC_REFRESH_TOKEN);
+            return;
         }
 
         const state = this.generateVerifier();
