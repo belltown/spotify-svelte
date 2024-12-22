@@ -47,6 +47,7 @@ export default class SpotifyApi {
         console.log('PUBLIC_REFRESH_TOKEN', PUBLIC_REFRESH_TOKEN);
 
         if (PUBLIC_REFRESH_TOKEN) {
+            this.storeAccessTokens('x', PUBLIC_REFRESH_TOKEN, 0);
             await this.refreshExpiredAccessToken(PUBLIC_REFRESH_TOKEN);
             return;
         }
